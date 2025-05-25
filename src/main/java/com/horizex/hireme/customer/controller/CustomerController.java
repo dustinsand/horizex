@@ -4,6 +4,7 @@ import com.horizex.hireme.customer.CustomerService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 import java.util.UUID;
 
@@ -17,8 +18,14 @@ class CustomerController {
     }
 
     @PostMapping("/customers")
-    CustomerDTO createCustomer(@RequestBody CustomerService.CreateCustomerCommand command) {
-        return customerService.createCustomer(command);
+    ResponseEntity<CustomerDTO> createCustomer(@RequestBody CustomerService.CreateCustomerCommand command) {
+        CustomerDTO createdCustomer = customerService.createCustomer(command);
+
+        URI location = URI.create("/customers/" + createdCustomer.id());
+
+        return ResponseEntity
+                .created(location)
+                .body(createdCustomer);
     }
 
     @GetMapping("/customers")

@@ -4,8 +4,10 @@ Feature: API Tests for Customer
     Given url 'http://localhost:8080/horizex/customers'
     And request { "firstName": "jane1", "middleName": "quincy", "lastName": "doe1", "emailAddress": "jane1.doe1@gmail.com", "phoneNumber": "17038675309" }
     When method post
-    Then status 200
+    Then status 201
     And match response == { id: '#notnull', firstName: 'jane1', middleName:"quincy", lastName:"doe1", emailAddress:"jane1.doe1@gmail.com", phoneNumber:"17038675309" }
+    # Assert Location header exists and contains new resource URI for the customer
+    And match responseHeaders['Location'][0] contains '/customers/'
 
     # Get the created customer
     Given path response.id
@@ -23,7 +25,7 @@ Feature: API Tests for Customer
     When method get
     Then status 404
 
-  Scenario: Get all 3 customers created by Flyway sql to initializae the database with test data
+  Scenario: Get all 3 customers created by Flyway to initializae the database with test data
     Given url 'http://localhost:8080/horizex/customers'
     When method get
     Then status 200
