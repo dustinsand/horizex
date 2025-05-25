@@ -1,4 +1,5 @@
 # Horizex API
+![Build](https://github.com/dustinsand/horizex/actions/workflows/build.yml/badge.svg)
 
 Horizex is a fictitious startup operating in a rapidly evolving domain. To support this flexibility, the application is
 built using the Spring Modulith framework, enabling a well-structured monolithic architecture. The codebase is organized
