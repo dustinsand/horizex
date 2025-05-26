@@ -6,7 +6,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "customers")
-public class CustomerEntity {
+public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", updatable = false, nullable = false)
@@ -26,10 +26,10 @@ public class CustomerEntity {
     // TODO - did not have time to implement a compose phone number
     private String phoneNumber;
 
-    public CustomerEntity() {
+    public Customer() {
     }
 
-    public CustomerEntity(String firstName, String middleName, String lastName, String emailAddress, String phoneNumber) {
+    public Customer(String firstName, String middleName, String lastName, String emailAddress, String phoneNumber) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;

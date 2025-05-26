@@ -1,4 +1,4 @@
-package com.horizex.hireme.customer.controller;
+package com.horizex.hireme.customer;
 
 import org.springframework.modulith.NamedInterface;
 

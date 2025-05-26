@@ -1,6 +1,5 @@
-package com.horizex.hireme.customer.controller;
+package com.horizex.hireme.customer;
 
-import com.horizex.hireme.customer.CustomerService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,7 +28,7 @@ class CustomerController {
     }
 
     @GetMapping("/customers")
-    // TODO paging - not doing as part of this exercise, but normally would
+    // TODO paging - not doing as part of this exercise, but normally would.
     List<CustomerDTO> getAll() {
         return customerService.findAllCustomers();
     }

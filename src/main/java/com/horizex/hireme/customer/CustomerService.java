@@ -1,6 +1,5 @@
 package com.horizex.hireme.customer;
 
-import com.horizex.hireme.customer.controller.CustomerDTO;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,7 +20,7 @@ public class CustomerService {
     }
 
     public CustomerDTO createCustomer(CreateCustomerCommand command) {
-        CustomerEntity save = repo.save(new CustomerEntity(command.firstName, command.middleName,
+        Customer save = repo.save(new Customer(command.firstName, command.middleName,
                 command.lastName, command.emailAddress, command.phoneNumber));
         return customerMapper.toDto(save);
     }
@@ -36,7 +35,7 @@ public class CustomerService {
 
     @Transactional(readOnly = true)
     public Optional<CustomerDTO> findCustomerById(UUID id) {
-        Optional<CustomerEntity> byId = repo.findById(id);
+        Optional<Customer> byId = repo.findById(id);
         return byId.map(customerMapper::toDto);
     }
 

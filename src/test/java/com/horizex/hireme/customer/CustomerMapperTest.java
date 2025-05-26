@@ -1,6 +1,5 @@
 package com.horizex.hireme.customer;
 
-import com.horizex.hireme.customer.controller.CustomerDTO;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
 
@@ -12,7 +11,7 @@ public class CustomerMapperTest {
     @Test
     public void entityToDto() {
         // Given
-        CustomerEntity entity = new CustomerEntity();
+        Customer entity = new Customer();
         entity.setFirstName("testFName");
 
         // When
