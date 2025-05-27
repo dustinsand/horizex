@@ -10,7 +10,7 @@ This modular design follows best practices typically found in microservice archi
 complexity of distributed systems. As the domain and non-functional requirements mature, these modules can be easily
 extracted and deployed as independent microservices.
 
-The first module in the system is the Customer module (com.horizex.hireme.customer). This module is responsible for
+The first module in the system is the Customer module (com.horizex.customer). This module is responsible for
 encapsulating all functionality related to managing customer data and exposing the Customer API. It serves as a
 foundational component for the platform and demonstrates the modular structure and boundaries promoted by Spring
 Modulith.  

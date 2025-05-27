@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the JAR file
-COPY target/hireme-0.0.1-SNAPSHOT.jar app.jar
+COPY target/horizex-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose port
 EXPOSE 8080

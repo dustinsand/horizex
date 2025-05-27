@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.horizex</groupId>
-	<artifactId>hireme</artifactId>
+	<artifactId>horizex</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hireme</name>
+	<name>horizex</name>
 	<description>APIs for Horizex</description>
 	<url/>
 	<licenses>

@@ -1,4 +1,4 @@
-package com.horizex.hireme.customer;
+package com.horizex.customer.domain.models;
 
 import jakarta.persistence.*;
 
