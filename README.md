@@ -87,7 +87,7 @@ minikube stop
 GitHub action will build the app and run the tests. 
 
 ## App Integration
-Use curl as the client to vaidate the API. 
+Use curl as the client to validate the API. 
 
 ```bash
 ./mvnw clean spring-boot:run
