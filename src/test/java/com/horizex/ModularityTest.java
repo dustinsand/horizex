@@ -1,4 +1,4 @@
-package com.horizex.hireme;
+package com.horizex;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.modulith.core.ApplicationModules;
@@ -8,21 +8,21 @@ public class ModularityTest {
 
     @Test
     public void applicationModules() {
-        ApplicationModules modules = ApplicationModules.of(HiremeApplication.class);
+        ApplicationModules modules = ApplicationModules.of(HorizexApplication.class);
         modules.forEach(System.out::println);
         modules.verify();
     }
 
     @Test
     void createDocumentation() {
-        ApplicationModules modules = ApplicationModules.of(HiremeApplication.class);
+        ApplicationModules modules = ApplicationModules.of(HorizexApplication.class);
         new Documenter(modules).writeDocumentation();
     }
 
     @Test
     void writeDocumentationSnippets() {
 
-        var modules = ApplicationModules.of(HiremeApplication.class).verify();
+        var modules = ApplicationModules.of(HorizexApplication.class).verify();
 
         new Documenter(modules)
                 .writeModulesAsPlantUml()

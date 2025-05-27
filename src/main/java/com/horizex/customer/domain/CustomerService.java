@@ -1,5 +1,8 @@
-package com.horizex.hireme.customer;
+package com.horizex.customer.domain;
 
+import com.horizex.customer.CustomerDto;
+import com.horizex.customer.domain.models.Customer;
+import com.horizex.customer.mapper.CustomerMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,7 +22,7 @@ public class CustomerService {
         this.repo = repo;
     }
 
-    public CustomerDTO createCustomer(CreateCustomerCommand command) {
+    public CustomerDto createCustomer(CreateCustomerCommand command) {
         Customer save = repo.save(new Customer(command.firstName, command.middleName,
                 command.lastName, command.emailAddress, command.phoneNumber));
         return customerMapper.toDto(save);
@@ -34,13 +37,13 @@ public class CustomerService {
     }
 
     @Transactional(readOnly = true)
-    public Optional<CustomerDTO> findCustomerById(UUID id) {
+    public Optional<CustomerDto> findCustomerById(UUID id) {
         Optional<Customer> byId = repo.findById(id);
         return byId.map(customerMapper::toDto);
     }
 
     @Transactional(readOnly = true)
-    public List<CustomerDTO> findAllCustomers() {
+    public List<CustomerDto> findAllCustomers() {
         return repo.findAll().stream().map(customerMapper::toDto).collect(Collectors.toList());
     }
 

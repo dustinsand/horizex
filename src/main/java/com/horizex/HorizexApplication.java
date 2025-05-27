@@ -1,13 +1,13 @@
-package com.horizex.hireme;
+package com.horizex;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HiremeApplication {
+public class HorizexApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HiremeApplication.class, args);
+		SpringApplication.run(HorizexApplication.class, args);
 	}
 
 }

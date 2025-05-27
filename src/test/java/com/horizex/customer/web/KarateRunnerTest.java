@@ -1,4 +1,4 @@
-package com.horizex.hireme.customer;
+package com.horizex.customer.web;
 
 import com.intuit.karate.junit5.Karate;
 import org.springframework.boot.test.context.SpringBootTest;

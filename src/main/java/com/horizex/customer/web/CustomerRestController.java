@@ -1,5 +1,7 @@
-package com.horizex.hireme.customer;
+package com.horizex.customer.web;
 
+import com.horizex.customer.CustomerDto;
+import com.horizex.customer.domain.CustomerService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,16 +11,16 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/horizex")
-class CustomerController {
+class CustomerRestController {
     private final CustomerService customerService;
 
-    CustomerController(CustomerService customerService) {
+    CustomerRestController(CustomerService customerService) {
         this.customerService = customerService;
     }
 
     @PostMapping("/customers")
-    ResponseEntity<CustomerDTO> createCustomer(@RequestBody CustomerService.CreateCustomerCommand command) {
-        CustomerDTO createdCustomer = customerService.createCustomer(command);
+    ResponseEntity<CustomerDto> createCustomer(@RequestBody CustomerService.CreateCustomerCommand command) {
+        CustomerDto createdCustomer = customerService.createCustomer(command);
 
         URI location = URI.create("/customers/" + createdCustomer.id());
 
@@ -29,12 +31,12 @@ class CustomerController {
 
     @GetMapping("/customers")
     // TODO paging - not doing as part of this exercise, but normally would.
-    List<CustomerDTO> getAll() {
+    List<CustomerDto> getAll() {
         return customerService.findAllCustomers();
     }
 
     @GetMapping("/customers/{id}")
-    ResponseEntity<CustomerDTO> getCustomer(@PathVariable UUID id) {
+    ResponseEntity<CustomerDto> getCustomer(@PathVariable UUID id) {
         return customerService.findCustomerById(id)
                 .map(ResponseEntity::ok)               // 200 OK with User
                 .orElse(ResponseEntity.notFound().build()); // 404 Not Found
