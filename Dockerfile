@@ -1,5 +1,5 @@
 # Use a lightweight JDK base image
-FROM openjdk:17-jdk-slim
+FROM openjdk:24-jdk-slim
 
 # Set working directory
 WORKDIR /app

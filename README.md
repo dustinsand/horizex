@@ -17,7 +17,7 @@ Modulith.
 
 ## Technology Stack
 
-- Java SDK 17
+- Java SDK 24
 - Spring Boot 3
 - Spring Data JPA
 - Spring Modulith
