@@ -1,4 +1,4 @@
-package com.horizex.common.models;
+package com.horizex.shared.model;
 
 import org.springframework.data.domain.Page;
 

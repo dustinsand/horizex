@@ -7,7 +7,7 @@ import org.springframework.modulith.docs.Documenter;
 public class ModularityTest {
 
     @Test
-    public void applicationModules() {
+    public void verifyModules() {
         ApplicationModules modules = ApplicationModules.of(HorizexApplication.class);
         modules.forEach(System.out::println);
         modules.verify();
@@ -22,10 +22,12 @@ public class ModularityTest {
     @Test
     void writeDocumentationSnippets() {
 
-        var modules = ApplicationModules.of(HorizexApplication.class).verify();
+        var modules = ApplicationModules.of(HorizexApplication.class);
 
         new Documenter(modules)
+                .writeAggregatingDocument()
+                .writeModuleCanvases()
                 .writeModulesAsPlantUml()
-                .writeIndividualModulesAsPlantUml();
+                .writeDocumentation();
     }
 }

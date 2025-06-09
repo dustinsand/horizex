@@ -1,12 +1,18 @@
-package com.horizex.customer.domain.models;
+package com.horizex.customer.adapter.out.jpa;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Table(name = "customers")
-public class Customer {
+public class CustomerJpaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", updatable = false, nullable = false)
@@ -26,10 +32,7 @@ public class Customer {
     // TODO - did not have time to implement a compose phone number
     private String phoneNumber;
 
-    public Customer() {
-    }
-
-    public Customer(String firstName, String middleName, String lastName, String emailAddress, String phoneNumber) {
+    public CustomerJpaEntity(String firstName, String middleName, String lastName, String emailAddress, String phoneNumber) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;

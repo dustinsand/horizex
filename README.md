@@ -10,8 +10,8 @@ This modular design follows best practices typically found in microservice archi
 complexity of distributed systems. As the domain and non-functional requirements mature, these modules can be easily
 extracted and deployed as independent microservices.
 
-The first module in the system is the Customer module (com.horizex.customer). This module is responsible for
-encapsulating all functionality related to managing customer data and exposing the Customer API. It serves as a
+The first module in the system is the Customer module (com.horizex.customerJpaEntity). This module is responsible for
+encapsulating all functionality related to managing customerJpaEntity data and exposing the Customer API. It serves as a
 foundational component for the platform and demonstrates the modular structure and boundaries promoted by Spring
 Modulith.  
 
@@ -21,8 +21,9 @@ Modulith.
 - Spring Boot 3
 - Spring Data JPA
 - Spring Modulith
-- H2 embedded database
+- H2 in memory database
 - Flyway to manage the database migration
+- Karate for behavior tests
 
 ## Build / Unit and Acceptance Tests
 
@@ -92,18 +93,18 @@ Use curl as the client to validate the API.
 ```bash
 ./mvnw clean spring-boot:run
 
-# Create a customer
+# Create a customerJpaEntity
 curl -v -X POST http://localhost:8080/horizex/customers \
      -H "Content-Type: application/json" \
      -d '{ "firstName": "curlF", "middleName": "quincy", "lastName": "curlL", "emailAddress": "curl1@gmail.com", "phoneNumber": "17038675309" }'
 
-# Get customer
-curl http://localhost:8080/horizex/customers/{uuid of created customer}
+# Get customerJpaEntity
+curl http://localhost:8080/horizex/customers/{uuid of created customerJpaEntity}
 
 # Call the customers endpoint to find all customers
 curl http://localhost:8080/horizex/customers
 
-# Delete customer
-curl -X DELETE http://localhost:8080/horizex/customers/{uuid of created customer}
+# Delete customerJpaEntity
+curl -X DELETE http://localhost:8080/horizex/customers/{uuid of created customerJpaEntity}
 
 ```
