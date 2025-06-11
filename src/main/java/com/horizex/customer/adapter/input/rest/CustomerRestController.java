@@ -1,6 +1,6 @@
-package com.horizex.customer.adapter.in.rest;
+package com.horizex.customer.adapter.input.rest;
 
-import com.horizex.customer.adapter.service.CustomerService;
+import com.horizex.customer.domain.CustomerService;
 import com.horizex.customer.domain.Customer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.horizex.customer.application.port.out;
+package com.horizex.customer.application.port.output;
 
 import com.horizex.customer.domain.Customer;
 

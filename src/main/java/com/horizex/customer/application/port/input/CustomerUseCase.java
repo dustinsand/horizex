@@ -1,6 +1,5 @@
-package com.horizex.customer.application.port.in;
+package com.horizex.customer.application.port.input;
 
-import com.horizex.customer.adapter.out.jpa.CustomerJpaEntity;
 import com.horizex.customer.domain.Customer;
 import org.springframework.transaction.annotation.Transactional;
 

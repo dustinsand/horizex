@@ -1,6 +1,6 @@
-package com.horizex.customer.adapter.out.jpa;
+package com.horizex.customer.adapter.output.jpa;
 
-import com.horizex.customer.application.port.out.CustomerPersistence;
+import com.horizex.customer.application.port.output.CustomerPersistence;
 import com.horizex.customer.domain.Customer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

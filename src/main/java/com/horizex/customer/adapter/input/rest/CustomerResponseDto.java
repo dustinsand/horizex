@@ -1,4 +1,4 @@
-package com.horizex.customer.adapter.in.rest;
+package com.horizex.customer.adapter.input.rest;
 
 import java.util.UUID;
 

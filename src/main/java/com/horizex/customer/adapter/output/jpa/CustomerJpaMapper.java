@@ -1,4 +1,4 @@
-package com.horizex.customer.adapter.out.jpa;
+package com.horizex.customer.adapter.output.jpa;
 
 import com.horizex.customer.domain.Customer;
 import org.mapstruct.Mapper;

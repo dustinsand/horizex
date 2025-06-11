@@ -1,8 +1,7 @@
-package com.horizex.customer.adapter.service;
+package com.horizex.customer.domain;
 
-import com.horizex.customer.application.port.in.CustomerUseCase;
-import com.horizex.customer.application.port.out.CustomerPersistence;
-import com.horizex.customer.domain.Customer;
+import com.horizex.customer.application.port.input.CustomerUseCase;
+import com.horizex.customer.application.port.output.CustomerPersistence;
 import com.horizex.customer.domain.event.CustomerCreatedEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

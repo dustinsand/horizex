@@ -1,7 +1,5 @@
 package com.horizex.customer.adapter.input.rest;
 
-import com.horizex.customer.adapter.in.rest.CustomerResponseDto;
-import com.horizex.customer.adapter.in.rest.CustomerResponseMapper;
 import com.horizex.customer.domain.Customer;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;

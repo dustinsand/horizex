@@ -1,4 +1,4 @@
-package com.horizex.customer.adapter.out.jpa;
+package com.horizex.customer.adapter.output.jpa;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

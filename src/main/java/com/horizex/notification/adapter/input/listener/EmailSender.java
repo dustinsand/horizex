@@ -1,4 +1,4 @@
-package com.horizex.notification.adapter.in.listener;
+package com.horizex.notification.adapter.input.listener;
 
 import com.horizex.customer.domain.event.CustomerCreatedEvent;
 import lombok.RequiredArgsConstructor;
