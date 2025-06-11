@@ -5,6 +5,7 @@ spring:
 logging:
   level:
     root: WARN
+    com.horizex: DEBUG
     org.springframework: DEBUG
     org.flywaydb: TRACE
 
