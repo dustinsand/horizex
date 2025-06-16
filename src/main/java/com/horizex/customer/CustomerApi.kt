@@ -1,6 +1,5 @@
 package com.horizex.customer
 
-import com.horizex.customer.domain.Customer
 import com.horizex.customer.domain.CustomerService
 import lombok.extern.slf4j.Slf4j
 import org.springframework.stereotype.Service
@@ -8,19 +7,12 @@ import java.util.*
 
 @Slf4j
 @Service
-class CustomerApi(private val customerService: CustomerService) {
-
+class CustomerApi(
+    private val customerService: CustomerService,
+    private val customerDtoMapper: CustomerDtoMapper
+) {
     fun getCustomer(customerId: UUID): CustomerDto? {
-        return customerService.findCustomerById(customerId).map(::toCustomerDto)
+        return customerService.findCustomerById(customerId).map(customerDtoMapper::toCustomerDto)
             .orElse(null)
     }
-
-    fun toCustomerDto(customer: Customer): CustomerDto =
-        CustomerDto(
-            firstName = customer.firstName,
-            middleName = customer.middleName,
-            lastName = customer.lastName,
-            emailAddress = customer.emailAddress,
-            phoneNumber = customer.phoneNumber
-        )
 }

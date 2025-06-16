@@ -6,8 +6,8 @@ logging:
   level:
     root: WARN
     com.horizex: DEBUG
-    org.springframework: DEBUG
-    org.flywaydb: TRACE
+    org.springframework: WARN
+    org.flywaydb: WARN
 
   datasource:
     url: jdbc:h2:mem:testdb

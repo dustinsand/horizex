@@ -2,6 +2,7 @@ package com.horizex.shared
 
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.DisplayName
 
 /**
  * Test class for KotlinUtils.
@@ -10,6 +11,7 @@ import org.junit.jupiter.api.Assertions.assertEquals
 class KotlinUtilsTest {
 
     @Test
+    @DisplayName("Test format string")
     fun testFormatString() {
         // Test with default suffix
         val result1 = KotlinUtils.formatString("hello")

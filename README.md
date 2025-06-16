@@ -108,3 +108,19 @@ curl http://localhost:8080/horizex/customers
 curl -X DELETE http://localhost:8080/horizex/customers/{uuid of created customerJpaEntity}
 
 ```
+
+## Graalvm Setup
+Based off watching [Bootiful GraalVM by Thomas Wuerthinger](https://www.youtube.com/watch?v=uAYYDJ_ubBg&t=1872s)
+
+### Measure startup time in total across cores.
+sdk use java 24.0.1-graal
+# -Ob compiles faster, but not as optimized
+export NATIVE_IMAGE_OPTIONS="-Ob --emit-build-report --enable-sbom"
+# -O2 compiles slower, but optimized
+export NATIVE_IMAGE_OPTIONS="-O2 --emit-build-report --enable-sbom"
+
+./mvnw -DskipTests -Pnative native:compile
+open target/web-build-report.html
+
+Change DEMO_COMMAND in start.sh for either native or non-native.
+./start.sh  
